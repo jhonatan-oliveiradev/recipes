@@ -1,4 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import {
 	FlatList,
@@ -17,6 +18,7 @@ import api from "../../services/api";
 export function Home() {
 	const [inputValue, setInputValue] = useState("");
 	const [foods, setFoods] = useState([]);
+	const navigation = useNavigation();
 
 	useEffect(() => {
 		async function fetchApi() {
@@ -28,8 +30,11 @@ export function Home() {
 	}, []);
 
 	function handleSearch() {
-		console.log("você digitou:");
-		console.log(inputValue);
+		if (!inputValue) return;
+
+		let input = inputValue;
+		setInputValue("");
+		navigation.navigate("Search", { name: input });
 	}
 
 	return (
