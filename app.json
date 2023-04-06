@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "receitas",
-    "slug": "receitas",
+    "name": "Receita Fácil",
+    "slug": "receita-facil",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
